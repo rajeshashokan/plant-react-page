@@ -1,24 +1,23 @@
 import React from 'react';
 import './App.css';
-import Colors from './components/Colors'
 import DetailsThumb from './components/DetailsThumb';
 
 class App extends React.Component{
+
 
   state = {
     products: [
       {
         "_id": "1",
-        "title": "Nike Shoes",
+        "title": "Aloe vera - Succulent Plant",
         "src": [
-            "https://www.upsieutoc.com/images/2020/06/27/img1.jpg",
-            "https://www.upsieutoc.com/images/2020/06/27/img2.jpg",
-            "https://www.upsieutoc.com/images/2020/06/27/img3.jpg",
-            "https://www.upsieutoc.com/images/2020/06/27/img4.jpg"
+          "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-aloe-vera-succulent-plant-16968585871500_869x869.jpg?v=1634213151",
+          "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-aloe-vera-succulent-plant-16968585805964_600x600.jpg?v=1637743597",
+          "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-aloe-vera-succulent-plant-16968585773196_600x600.jpg?v=1634213144",
+          "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-aloe-vera-succulent-plant-16968585740428_600x600.jpg?v=1637743597"
           ],
-        "description": "UI/UX designing, html css tutorials",
-        "content": "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
-        "price": 23,
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta voluptas laboriosam autem nemo fugit. Delectus, blanditiis. Aspernatur nihil deserunt consectetur laborum ipsum nemo, eum ad consequuntur magni voluptas veniam quos!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis iste autem adipisci ipsum sunt at ab, cupiditate nemo, magnam aliquam, quasi ea modi pariatur eaque dolorum nostrum voluptates aliquid quam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quia ipsa, ab quos maxime voluptates inventore iste! Sed ad quos fugit reiciendis et, quaerat consectetur facere magnam itaque id accusantium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ab nobis.",
+        "price": 299,
         "colors":["red","black","crimson","teal"],
         "count": 1
       }
@@ -57,16 +56,19 @@ class App extends React.Component{
               <div className="box">
                 <div className="row">
                   <h2>{item.title}</h2>
-                  <span>${item.price}</span>
                 </div>
-                <Colors colors={item.colors} />
 
+                <div class="product-price-discount"><span>₹{item.price}</span><span class="line-through">₹{item.price + item.price*0.1}</span></div>
+		
                 <p>{item.description}</p>
                 <p>{item.content}</p>
 
                 <DetailsThumb images={item.src} tab={this.handleTab} myRef={this.myRef} />
-                <button className="cart">Add to cart</button>
+                <button className="btn btn-solid btn-cart">Add to cart</button>
 
+                <button className="btn btn-solid">Buy Now</button>
+
+           
               </div>
             </div>
           ))
